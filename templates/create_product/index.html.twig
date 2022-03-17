@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+{{ form_start(form, {'attr': {'id': 'form_product_create'}}) }}
+    {{ form_row(form.kcal) }}
+    {{ form_row(form.kj) }}
+    {{ form_row(form.fat) }}
+    {{ form_row(form.saturedFat) }}
+    {{ form_row(form.carbohydrate) }}
+    {{ form_row(form.sugar) }}
+    {{ form_row(form.fiber) }}
+    {{ form_row(form.protein) }}
+    {{ form_row(form.salt) }}
+    {{ form_row(form.ean) }}
+    <div id="ingredients" data-prototype="{{ form_row(form.ingredient.vars.prototype)|e('html_attr') }}">
+        <h4>{{ form_row(form.ingredient) }}</h4>
+        <span></span>
+    </div>
+{{ form_end(form) }}
+
+{% endblock %}
